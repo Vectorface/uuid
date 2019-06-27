@@ -4,12 +4,6 @@ php:
   - 7.2
   - 7.1
   - 7.0
-  - hhvm-3.30
-
-matrix:
-  allow_failures:
-    - php: hhvm-3.30
-  fast_finish: true
 
 before_script:
   - composer self-update
@@ -17,8 +11,8 @@ before_script:
 
 script:
   - ./vendor/bin/phpunit --coverage-clover=coverage.clover
-  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm-3.30" ]; then vendor/bin/test-reporter --coverage-report=coverage.clover; fi;'
-  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm-3.30" ]; then wget https://scrutinizer-ci.com/ocular.phar; fi;'
-  - sh -c 'if [ "$TRAVIS_PHP_VERSION" != "hhvm-3.30" ]; then php ocular.phar code-coverage:upload --format=php-clover coverage.clover; fi'
+  - ./vendor/bin/test-reporter --coverage-report=coverage.clover
+  - wget https://scrutinizer-ci.com/ocular.phar
+  - php ocular.phar code-coverage:upload --format=php-clover coverage.clover
 
 sudo: false
