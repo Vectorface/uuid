@@ -1,0 +1,31 @@
+{
+    "name": "vectorface/uuid",
+    "description": "Simple UUID generator",
+    "keywords": [
+        "uuid", "guid"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        { "name": "J. Anderson" }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Vectorface\\UUID\\": "src",
+            "Vectorface\\Tests\\UUID\\": "tests"
+        }
+    },
+    "homepage": "https://github.com/Vectorface/uuid",
+    "support": {
+        "issues": "https://github.com/Vectorface/uuid/issues",
+        "source": "https://github.com/Vectorface/uuid"
+    },
+    "require": {
+        "php": "^7.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.0 || ^7.0 | ^8.0",
+        "codeclimate/php-test-reporter": "dev-master"
+    }
+}
+
